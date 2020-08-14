@@ -26,6 +26,7 @@ public class CommodityServiceImpl implements CommodityService {
                 .imgUrl(item.getImgUrl())
                 .name(item.getName())
                 .price(item.getPrice())
+                .id(item.getId())
                 .build();
     }
 }

@@ -13,4 +13,5 @@ public class Commodity {
     private String name;
     private Integer price;
     private String imgUrl;
+    private int id;
 }

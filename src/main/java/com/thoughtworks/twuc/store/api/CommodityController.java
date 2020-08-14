@@ -16,6 +16,8 @@ public class CommodityController {
 
     @GetMapping("/commodities")
     public ResponseEntity<List<Commodity>> getCommodityList() {
-        return ResponseEntity.ok(commodityService.getCommodityList());
+        List<Commodity> commodityList = commodityService.getCommodityList();
+        return ResponseEntity.ok()
+                .body(commodityList);
     }
 }

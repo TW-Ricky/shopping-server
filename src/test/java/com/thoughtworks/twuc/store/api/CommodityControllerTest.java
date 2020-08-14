@@ -30,12 +30,12 @@ class CommodityControllerTest {
     @BeforeEach
     void setUp() {
         commodityRepository.deleteAll();
-        commodityRepository.save(CommodityDto.builder().imgUrl("").name("可乐").price(1).build());
-        commodityRepository.save(CommodityDto.builder().imgUrl("").name("雪碧").price(2).build());
-        commodityRepository.save(CommodityDto.builder().imgUrl("").name("香肠").price(3).build());
-        commodityRepository.save(CommodityDto.builder().imgUrl("").name("咖啡").price(4).build());
-        commodityRepository.save(CommodityDto.builder().imgUrl("").name("冰红茶").price(5).build());
-        commodityRepository.save(CommodityDto.builder().imgUrl("").name("奶茶").price(6).build());
+        commodityRepository.save(CommodityDto.builder().imgUrl("kele.jpg").name("可乐").price(1).build());
+        commodityRepository.save(CommodityDto.builder().imgUrl("xuebi.jpg").name("雪碧").price(2).build());
+        commodityRepository.save(CommodityDto.builder().imgUrl("fenda.jpg").name("芬达").price(3).build());
+        commodityRepository.save(CommodityDto.builder().imgUrl("kafei.jpg").name("咖啡").price(4).build());
+        commodityRepository.save(CommodityDto.builder().imgUrl("binghongcha.jpg").name("冰红茶").price(5).build());
+        commodityRepository.save(CommodityDto.builder().imgUrl("naicha.jpg").name("奶茶").price(6).build());
     }
     @Test
     public void shouldReturnGoods() throws Exception {
@@ -43,7 +43,7 @@ class CommodityControllerTest {
                 .andExpect(jsonPath("$", hasSize(6)))
                 .andExpect(jsonPath("$[0].name", is("可乐")))
                 .andExpect(jsonPath("$[1].name", is("雪碧")))
-                .andExpect(jsonPath("$[2].name", is("香肠")))
+                .andExpect(jsonPath("$[2].name", is("芬达")))
                 .andExpect(jsonPath("$[3].name", is("咖啡")))
                 .andExpect(jsonPath("$[4].name", is("冰红茶")))
                 .andExpect(jsonPath("$[5].name", is("奶茶")));
